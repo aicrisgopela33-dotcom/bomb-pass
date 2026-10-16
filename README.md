@@ -1,13 +1,12 @@
-# [Your Game Title] API
+# Bomb Pass API
 
-Backend API for **[Your Game Title]**, a tournament game for the SorSU Bulan Campus library.
+Backend API for **Bomb Pass**, a tournament game for the SorSU Bulan Campus library.
 CS 313 Software Engineering 1, A.Y. 2026-2027.
 
-- Developer: [Your full name] ([your GitHub username]), BSCS [3-1 or 3-2]
-- Group and game concept: [Group name]
+- Developer: Aicris Gopela (aicrisgopela33-dotcom), BSCS 3-2
+- Group and game concept: Bomb Pass Team (Group 7)
 
-This is my own build of my group's game concept. Every commit in this repository was made by me, with Git, on my own computer or in my own Codespace.
-
+This repository contains the CS 313 backend API for the Bomb Pass game concept developed by Bomb Pass Team (Group 7). See the Git history for commit attribution.
 ## Tech stack
 
 | Layer | Tool |
@@ -60,11 +59,24 @@ Base URL: `http://localhost:3001/api/v1`
 
 ## What "completed" means in my game
 
-[One or two sentences: when does a player count as having completed a game? For example: "A player completed the game when they answered every question, even if some answers were wrong or timed out."]
+A player is completed when their seat's `player_status` is `FINISHED` after the session ends. Finalized seats are saved with `final_rank`; they are completed even if some of their answers were wrong or timed out. Seats marked `FORFEITED` or `ELIMINATED` are included in the game's reported players but have `completed = false`.
 
 ## Tables
 
-[List your tables, one line each, in the order of your migrations.]
+1. `users` - `20261016092535-create-users.js`
+2. `question_sets` - `20261016092741-create-question-sets.js`
+3. `questions` - `20261016092842-create-questions.js`
+4. `choices` - `20261016093033-create-choices.js`
+5. `game_sessions` - `20261016094022-create-game-sessions.js`
+6. `players` - `20261016094650-create-players.js`
+7. `session_question_history` - `20261016094652-create-session-question-history.js`
+8. `answers` - `20261016094655-create-answers.js`
+9. `penalties` - `20261016094658-create-penalties.js`
+10. `exp_transactions` - `20261016094700-create-exp-transactions.js`
+11. `voucher_catalog` - `20261016094703-create-voucher-catalog.js`
+12. `voucher_redemptions` - `20261016094705-create-voucher-redemptions.js`
+
+The extra `20261016094707-add-session-player-foreign-keys.js` migration is not a table migration; it adds the circular `bomb_holder_player_id` and `winner_player_id` foreign keys after `players` exists.
 
 ## Database scripts
 

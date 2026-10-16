@@ -1,7 +1,7 @@
 {
-  "name": "your-game-api",
+  "name": "bomb-pass-api",
   "version": "1.0.0",
-  "description": "CHANGE_ME - one sentence about your game (CS 313 Software Engineering 1)",
+  "description": "Bomb Pass is a multiplayer quiz game in which the current bomb holder must answer a multiple-choice question correctly to pass the bomb; only an expired bomb timer causes a penalty.",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -19,7 +19,7 @@
   "engines": {
     "node": ">=22"
   },
-  "author": "CHANGE_ME - your full name",
+  "author": "Aicris Gopela",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^18.0.7",
